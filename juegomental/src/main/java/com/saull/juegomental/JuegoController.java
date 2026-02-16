@@ -23,48 +23,69 @@ public class JuegoController {
         }
     }
 
-    // ===== BANCO DE PREGUNTAS =====
+    // ===== BANCO DE PREGUNTAS (FÁCIL CON TRAMPA → DIFÍCIL) =====
     List<Pregunta> banco = List.of(
-            new Pregunta("Un número más su mitad es 30. ¿Cuál es?",
-                    new String[]{"10","15","20","25"}, 2),
-            new Pregunta("El doble de un número es 18. ¿Cuál es?",
-                    new String[]{"6","8","9","12"}, 2),
-            new Pregunta("Tres números iguales suman 21. ¿Cada uno es?",
-                    new String[]{"5","6","7","8"}, 2),
-            new Pregunta("La mitad de un número más 3 es 11. ¿Cuál es?",
-                    new String[]{"14","16","18","20"}, 1),
-            new Pregunta("Un número menos su mitad es 10. ¿Cuál es?",
-                    new String[]{"10","15","20","25"}, 2),
-            new Pregunta("El triple de un número es 24. ¿Cuál es?",
+
+            // 🟢 NIVEL FÁCIL (PARECEN SIMPLES, PERO TIENEN TRAMPA)
+
+            new Pregunta("Si tienes 3 manzanas y tomas 2, ¿cuántas tienes?",
+                    new String[]{"1","2","3","5"}, 1), // tienes 2 porque las tomaste
+
+            new Pregunta("El doble de 5 más 3 es:",
+                    new String[]{"13","16","10","8"}, 0),
+            // trampa: (5*2)+3 = 13, no 16
+
+            new Pregunta("¿Qué es mayor: 2x cuando x=3 o 3x cuando x=2?",
+                    new String[]{"2x","3x","Son iguales","No se puede saber"}, 2),
+            // 2*3 = 6 y 3*2 = 6
+
+            new Pregunta("La mitad de 8 más 4 es:",
+                    new String[]{"6","8","4","12"}, 1),
+            // trampa: (8/2)+4 = 8
+
+            new Pregunta("Si un número es 0, ¿cuánto es su doble?",
+                    new String[]{"0","1","No existe","Depende"}, 0),
+
+
+            // 🟡 NIVEL MEDIO (ÁLGEBRA DIRECTA)
+
+            new Pregunta("Si 2x + 4 = 14, ¿x es?",
+                    new String[]{"4","5","6","7"}, 1),
+
+            new Pregunta("Si x/3 = 5, ¿x es?",
+                    new String[]{"10","12","15","18"}, 2),
+
+            new Pregunta("Un número más su mitad es 18. ¿Cuál es?",
+                    new String[]{"10","12","14","16"}, 1),
+
+            new Pregunta("Si 3x - 6 = 9, ¿x es?",
+                    new String[]{"3","4","5","6"}, 2),
+
+            new Pregunta("Dos números iguales suman 50. ¿Cada uno es?",
+                    new String[]{"20","25","30","15"}, 1),
+
+
+            // 🔴 NIVEL DIFÍCIL (VARIOS PASOS)
+
+            new Pregunta("Un número más su doble menos 4 es 20. ¿Cuál es?",
                     new String[]{"6","7","8","9"}, 2),
-            new Pregunta("Si x + 5 = 12, ¿x es?",
-                    new String[]{"5","6","7","8"}, 2),
-            new Pregunta("Si 2x = 14, ¿x es?",
-                    new String[]{"6","7","8","9"}, 1),
-            new Pregunta("Un número dividido entre 5 es 4. ¿Cuál es?",
-                    new String[]{"15","20","25","30"}, 1),
-            new Pregunta("Dos números iguales suman 40. ¿Cada uno es?",
-                    new String[]{"10","15","20","25"}, 2),
-            new Pregunta("Un número más 8 es 15. ¿Cuál es?",
-                    new String[]{"5","6","7","8"}, 2),
-            new Pregunta("El doble de 9 es:",
-                    new String[]{"16","17","18","19"}, 2),
-            new Pregunta("La mitad de 50 es:",
-                    new String[]{"20","25","30","35"}, 1),
-            new Pregunta("Si 3x = 30, ¿x es?",
-                    new String[]{"5","8","10","12"}, 2),
-            new Pregunta("Un número menos 7 es 9. ¿Cuál es?",
-                    new String[]{"14","15","16","17"}, 2),
-            new Pregunta("Si x/2 = 6, ¿x es?",
-                    new String[]{"10","11","12","13"}, 2),
-            new Pregunta("El doble de la mitad de 20 es:",
-                    new String[]{"10","15","20","25"}, 2),
-            new Pregunta("Si x + x = 18, ¿x es?",
-                    new String[]{"6","7","8","9"}, 3),
-            new Pregunta("Un número más 3 es igual a 3. ¿Cuál es?",
-                    new String[]{"0","1","2","3"}, 0),
-            new Pregunta("Si 4x = 16, ¿x es?",
-                    new String[]{"2","3","4","5"}, 2)
+            // x + 2x - 4 = 20 → 3x = 24 → x=8
+
+            new Pregunta("La mitad de un número más su triple es 35. ¿Cuál es?",
+                    new String[]{"8","9","10","12"}, 2),
+            // x/2 + 3x = 35 → 7x/2=35 → x=10
+
+            new Pregunta("Si 4(x - 2) = 24, ¿x es?",
+                    new String[]{"6","7","8","9"}, 2),
+
+            new Pregunta("Un número menos 5 dividido entre 3 es 5. ¿Cuál es?",
+                    new String[]{"18","20","21","24"}, 1),
+            // (x-5)/3 = 5 → x-5=15 → x=20
+
+            new Pregunta("Si x + (x/2) + (x/4) = 21, ¿x es?",
+                    new String[]{"8","10","12","14"}, 2)
+            // fracciones combinadas
+
     );
 
     // ===== INICIO =====
