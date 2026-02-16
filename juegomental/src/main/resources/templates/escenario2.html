@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Correcto</title>
+
+    <!-- Redirección automática a la siguiente pregunta -->
+    <script>
+        setTimeout(function(){
+            window.location.href = "/escenario1";
+        }, 2000);
+    </script>
+
+    <style>
+        body{
+            margin:0;
+            height:100vh;
+            background:black;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-family:Arial;
+        }
+
+        /* Ventana del juego */
+        .pantalla{
+            position:relative;
+            width:800px;
+            height:450px;
+            border:4px solid #00ffcc;
+            border-radius:15px;
+            overflow:hidden;
+            box-shadow:0 0 20px #00ffcc;
+        }
+
+        /* Fondo */
+        .fondo{
+            position:absolute;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+
+        /* Caja central */
+        .caja{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            background:rgba(0,0,0,0.7);
+            padding:30px;
+            border-radius:15px;
+            text-align:center;
+            color:white;
+        }
+
+        h1{
+            margin:0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="pantalla">
+
+    <!-- Imagen de fondo -->
+    <img src="/img/escenario2.png" class="fondo">
+
+    <!-- Mensaje -->
+    <div class="caja">
+        <h1>✅ ¡FELICIDADES! PASAS A LA SIGUIENTE</h1>
+    </div>
+
+</div>
+
+</body>
+</html>
