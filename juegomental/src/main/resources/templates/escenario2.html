@@ -52,12 +52,37 @@
             border-radius:15px;
             text-align:center;
             color:white;
+            width:70%;
         }
 
         h1{
             margin:0;
+            font-size:22px;
+            line-height:1.4;
         }
     </style>
+
+    <!-- Script para mensaje aleatorio -->
+    <script>
+        const mensajesCorrectos = [
+            "🔥 ¡Pero míralo/a! ¿Desde cuándo eres tan crack?",
+            "🚀 Subiendo de nivel… ya casi desbloqueas el modo leyenda.",
+            "🏆 Denle su trofeo invisible porque se lo ganó.",
+            "😎 ¿Estás practicando en secreto o qué?",
+            "⚡ Eso estuvo tan bien que hasta el juego se sorprendió.",
+            "💯 Cuando quieres, puedes… y cuando puedes, arrasas.",
+            "👏 Así sí da gusto competir contigo.",
+            "✨ Ese cerebro tuyo hoy sí vino a trabajar.",
+            "🎯 Precisión quirúrgica… impecable.",
+            "😌 Tranquilo/a, deja algo de talento para los demás."
+        ];
+
+        window.onload = function(){
+            const random = Math.floor(Math.random() * mensajesCorrectos.length);
+            document.getElementById("mensajeCorrecto").innerText = mensajesCorrectos[random];
+        }
+    </script>
+
 </head>
 
 <body>
@@ -69,7 +94,7 @@
 
     <!-- Mensaje -->
     <div class="caja">
-        <h1>✅ ¡FELICIDADES! PASAS A LA SIGUIENTE</h1>
+        <h1 id="mensajeCorrecto"></h1>
     </div>
 
 </div>

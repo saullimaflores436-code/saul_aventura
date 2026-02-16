@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Error</title>
 
-    <!-- Redirección correcta: vuelve al flujo del juego -->
+    <!-- Redirección: vuelve al flujo del juego -->
     <script>
         setTimeout(function(){
             window.location.href = "/escenario1";
@@ -57,10 +57,32 @@
 
         h1{
             margin:0;
-            font-size:24px;
+            font-size:22px;
             line-height:1.4;
         }
     </style>
+
+    <!-- Script para mensaje aleatorio -->
+    <script>
+        const mensajes = [
+            "😂 Bueno… al menos lo intentaste. Eso ya es histórico.",
+            "🎯 Fallaste el blanco… pero le diste a la pared con confianza.",
+            "🧠 Tu cerebro hoy pidió día libre, ¿no?",
+            "🚨 ¡Nuevo récord! Pero no del bueno.",
+            "🎭 Actuaste como si supieras… y casi te creemos.",
+            "😌 Me encanta tu seguridad… aunque esté completamente equivocada.",
+            "🤝 Gracias por participar… vuelve cuando el cerebro esté online.",
+            "⚠️ Casi… pero no. Mucha fe, poca precisión.",
+            "🫠 Eso estuvo tan mal que hasta el fondo se decepcionó.",
+            "🔄 Reiniciando neuronas… espera un momento."
+        ];
+
+        window.onload = function(){
+            const random = Math.floor(Math.random() * mensajes.length);
+            document.getElementById("mensajeRandom").innerText = mensajes[random];
+        }
+    </script>
+
 </head>
 
 <body>
@@ -72,7 +94,7 @@
 
     <!-- Mensaje -->
     <div class="caja">
-        <h1>❌ RESPUESTA INCORRECTA<br>ANALIZA Y RESUELVE BIEN</h1>
+        <h1 id="mensajeRandom"></h1>
     </div>
 
 </div>
