@@ -79,7 +79,14 @@ public class JuegoController {
     @GetMapping("/escenario1")
     public String pregunta(HttpSession session, Model model) {
 
-        int indice = (int) session.getAttribute("preguntaActual");
+        Integer indiceObj = (Integer) session.getAttribute("preguntaActual");
+
+        if (indiceObj == null) {
+            indiceObj = 0;
+            session.setAttribute("preguntaActual", 0);
+        }
+
+        int indice = indiceObj;
 
         if (indice >= banco.size()) {
             return "victoria";
